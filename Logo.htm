@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html xml:lang="es" lang="es">
+  <head>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"NRJS-52f0838caf72ff5fb85","applicationID":"549684288","transactionName":"d19fEBAMXQ8GQhlHVFlAXQUWBkJMEFhZRA==","queueTime":0,"applicationTime":102,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-52f0838caf72ff5fb85",applicationID:"549684288"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <title>Logo Del Club De Futbol - Creador de Logos Turbologo</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7hDBczHVijLZEeSAEyRtXz79Jg2JKPrQ0ISVPRJ4XxsIPfGSxQZUUCH3CnaY72SaByKfwE3925J6ckz6Z+gVcg==" />
+
+    <meta property="og:title" content="Logo Del Club De Futbol - Creador de Logos Turbologo" />
+    <meta property="og:description" content="Logo Del Club De Futbol es excelente si trabaja en Club, Deporte, Club de fútbol industrias. Utilice esta plantilla para crear un logotipo para su empresa o equipo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://turbologo.com/es/crear-logo/templates/1274440-logo-del-club-de-futbol" />
+    <meta property="og:image" content="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274440/draw_svg20210507-22909-1wt4rbj.svg.png" />
+
+
+      <meta property="og:image:width" content="500" />
+      <meta property="og:image:height" content="500" />
+
+    <meta name="description" content="Logo Del Club De Futbol es excelente si trabaja en Club, Deporte, Club de fútbol industrias. Utilice esta plantilla para crear un logotipo para su empresa o equipo" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-signin-client_id" content="401226411324-f3ce2r923qoc5uk4vnou5cag29lu8ogv.apps.googleusercontent.com">
+
+    <script type='application/ld+json'>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://turbologo.com",
+        "logo": "https://turbologo.com/turbologo-logo.png"
+      }
+    </script>
+
+    
+
+    
+
+    <link rel="canonical" href="https://turbologo.com/es/crear-logo/templates/1274440-logo-del-club-de-futbol">
+
+    <link rel="alternate" hrefLang="en" href="https://turbologo.com/logo-maker/templates/1274440-football-club-logo" />
+<link rel="alternate" hrefLang="ru" href="https://turbologo.ru/create-logo/templates/1274440-logotip-futbolnogo-kluba" />
+<link rel="alternate" hrefLang="es" href="https://turbologo.com/es/crear-logo/templates/1274440-logo-del-club-de-futbol" />
+<link rel="alternate" hrefLang="pt" href="https://turbologo.com/pt/criar-logo/templates/1274440-logotipo-do-clube-de-futebol" />
+<link rel="alternate" hrefLang="fr" href="https://turbologo.com/fr/creer-un-logo/templates/1274440-logo-du-club-de-football" />
+<link rel="alternate" hrefLang="it" href="https://turbologo.com/it/crea-logo/templates/1274440-logo-del-club-di-calcio" />
+<link rel="alternate" hrefLang="de" href="https://turbologo.com/de/logo-erstellen/templates/1274440-fussballverein-logo" />
+<link rel="alternate" hrefLang="tr" href="https://turbologo.com/tr/logo-tasarim/templates/1274440-futbol-kulubu-logosu" />
+
+    <link rel="stylesheet" media="all" href="https://assets.turbologo.com/assets/application-9a8fa3d5b34ec719512f1174d3dde8bdc2ec2102ef766a75a48a36bc29e452e2.css" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.turbologo.com/assets/favicon-3a4b4a01c2c76d5c6589f3e67ce6b9ecb8959e1fbeefa46ac9336446d81bd77c.png" sizes="32x32" />
+
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-10947163-13', 'auto', {'allowLinker': true});
+    ga('require', 'linker');
+    ga('linker:autoLink', ["turbologo.ru"]);
+
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KKNJSZH');</script>
+  <!-- End Google Tag Manager -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-792427572"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+      gtag('config', 'AW-792427572');
+  </script>
+
+      <script>window.bugsnag_key = 'c2de551fbedfa8addfd60f98a20f026a'</script>
+
+    
+    
+    <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '139894600014328');
+fbq('track', 'PageView');
+</script>
+<!-- End Facebook Pixel Code -->
+    <script src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async></script>
+<script type="text/javascript">
+  (function(t,a,p){t.TapfiliateObject=a;t[a]=t[a]||function(){ (t[a].q=t[a].q||[]).push(arguments)}})(window,'tap');
+
+  tap('create', '24668-7b6426', { integration: "javascript" });
+  tap('detect');
+</script>
+    <script src="https://static.indoleads.com/js/platform/handle.js" async></script>
+
+<script src="https://static.indoleads.com/js/platform/container_v2.min.js" async></script>
+<script>
+    window.INDOLEADS_LIB = window.INDOLEADS_LIB || [];
+    window.INDOLEADS_LIB.push({
+        offer_id: 12525,
+        network: "https://static.indoleads.com"
+    });
+</script>
+
+  </head>
+
+  <body class="">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKNJSZH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '763326294041532',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.2'
+    });
+
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+  function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+  }
+  function initClient() {
+    // Retrieve the discovery document for version 3 of Google Drive API.
+    // In practice, your app can retrieve one or more discovery documents.
+    var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+    var SCOPE = 'https://www.googleapis.com/auth/userinfo.email';
+
+    // Initialize the gapi.client object, which app uses to make API requests.
+    // Get API key and client ID from API Console.
+    // 'scope' field specifies space-delimited list of access scopes.
+    gapi.client.init({
+        'apiKey': 'AIzaSyClZ3Po1hoF9-9EAtj-HjrNHWXWAKMD7aY',
+        // 'discoveryDocs': [discoveryUrl],
+        'clientId': '401226411324-f3ce2r923qoc5uk4vnou5cag29lu8ogv.apps.googleusercontent.com',
+        'scope': SCOPE
+    }).then(function () {
+      GoogleAuth = gapi.auth2.getAuthInstance();
+    });
+  }
+</script>
+<script async defer src="https://apis.google.com/js/api.js"
+  onload="this.onload=function(){};handleClientLoad()"
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+    <div id="tooltip" class="tooltip"></div>
+    <div class="modal-outer">
+  <div class="modal-middle">
+    <div class="modal default" id="login">
+      <div class="h3">Iniciar sesión</div>
+
+      <form name='login' id="login-form">
+        <div class="social-signin-buttons">
+  <a href="javascript:void(0)" class="facebook-login"><img data-src="https://assets.turbologo.com/assets/icons/facebook-5a09b6365a7e7899ee54b317e45456f6dee760fc79596de7386b8f5354dfc0ec.svg" class="lazyload" /></a>
+  <a href="javascript:void(0)" class="google-login"><img data-src="https://assets.turbologo.com/assets/icons/google-3424f30a0f8de2ae9ffc53ec167f2101608179cba04536a58647e896e2924af7.svg" class="lazyload" /></a>
+
+  <input type="hidden" name="facebook_access_token" />
+  <input type="hidden" name="google_token" />
+</div>
+        <div class="errors"></div>
+        <label>
+          <input type='email' name='email' placeholder='Email' />
+        </label>
+        <label>
+          <input type='password' name='password' placeholder='Contraseña' />
+        </label>
+        <input type="hidden" name="redirect_url" value=""/>
+        <input type='submit' value='Iniciar sesión' class='submit button' />
+        <a href="#password_restore" rel="modal" class="basic">Se te olvidó tu contraseña</a>
+        <a href="#signup" rel="modal" class="basic">Registrarse</a>
+      </form>
+    </div><!-- end login modal -->
+
+
+    <div class="modal default" id="general-error">
+      <div class="h3">Error occurs</div>
+      <p>Please refresh page and try again. If problem occurs again please contact us.</p>
+    </div>
+
+    <div class="modal default" id="signup">
+      <div class="h3">Registrarse</div>
+      <form name='signup' id="signup-form">
+        <div class="social-signin-buttons">
+  <a href="javascript:void(0)" class="facebook-login"><img data-src="https://assets.turbologo.com/assets/icons/facebook-5a09b6365a7e7899ee54b317e45456f6dee760fc79596de7386b8f5354dfc0ec.svg" class="lazyload" /></a>
+  <a href="javascript:void(0)" class="google-login"><img data-src="https://assets.turbologo.com/assets/icons/google-3424f30a0f8de2ae9ffc53ec167f2101608179cba04536a58647e896e2924af7.svg" class="lazyload" /></a>
+
+  <input type="hidden" name="facebook_access_token" />
+  <input type="hidden" name="google_token" />
+</div>
+        <div class="errors"></div>
+        <label><input type='email' name='email' placeholder='Email' /></label>
+        <label><input type='password' name='password' placeholder='Contraseña' /></label>
+        <input type="hidden" name="redirect_url" value=""/>
+        <input type="hidden" name="locale" value="es"/>
+        <input type='submit' value='Registrarse' class='submit button' />
+        <a href="#login" rel="modal" class="basic">¿Ya tiene una cuenta?</a>
+        <p class="personal-agreement-block">Al registrarse acepta los <a href="/terms" target="_blank">términos del servicio</a></p>
+      </form>
+    </div>
+
+    <div class="modal default" id="signup-from-template">
+      <div class="h3">Regístrese para usar la plantilla</div>
+      <form name='signup' id="signup-form">
+        <div class="social-signin-buttons">
+  <a href="javascript:void(0)" class="facebook-login"><img data-src="https://assets.turbologo.com/assets/icons/facebook-5a09b6365a7e7899ee54b317e45456f6dee760fc79596de7386b8f5354dfc0ec.svg" class="lazyload" /></a>
+  <a href="javascript:void(0)" class="google-login"><img data-src="https://assets.turbologo.com/assets/icons/google-3424f30a0f8de2ae9ffc53ec167f2101608179cba04536a58647e896e2924af7.svg" class="lazyload" /></a>
+
+  <input type="hidden" name="facebook_access_token" />
+  <input type="hidden" name="google_token" />
+</div>
+        <div class="errors"></div>
+        <label><input type='email' name='email' placeholder='Email' /></label>
+        <label><input type='password' name='password' placeholder='Contraseña' /></label>
+        <input type="hidden" name="redirect_url" value=""/>
+        <input type="hidden" name="locale" value="es"/>
+        <input type='submit' value='Registrarse' class='submit button' />
+        <a href="#login" rel="modal" class="basic">¿Ya tiene una cuenta?</a>
+        <p class="personal-agreement-block">Al registrarse acepta los <a href="/terms" target="_blank">términos del servicio</a></p>
+      </form>
+    </div>
+
+    <div class="modal default" id="password_restore">
+      <div class="h3">Restaurar contraseña</div>
+      <p style="padding-bottom: 0;">Ingrese el correo electrónico y la contraseña y le enviaremos un correo electrónico para restaurar la contraseña</p>
+      <form style="padding-top: 0;" class="new_user" id="new_user" action="/api/password" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="errors"></div>
+        <div class="notifications"></div>
+        <input  placeholder="Email" type="email" name="user[email]"/>
+        <input type="submit" name="commit" value="Enviar" class="submit button" style="margin-top: 20px" data-disable-with="Enviar" />
+
+        <a href="#login" rel="modal" class="basic">Regresar para iniciar sesión</a>
+</form>    </div>
+  </div>
+
+
+  <div class="modal-overlay"></div>
+</div>
+
+    <div class="wrapper">
+      
+    <div class="tl_header ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 tl_header_in">
+                    <a href="https://turbologo.com/es" class="tl_header__logo">
+                        <img src="https://assets.turbologo.com/assets/landing/icons/pi-logo-66cda23dce76f1adf42edacfd73d7a171f2903ceb9bb6a2a4b5b31222d96f700.svg" width="1000" height="1000" alt="Turbologo logo" />
+                    </a>
+
+                      <a href="#" class="tl_header__nav_btn">
+                          <img data-src="https://assets.turbologo.com/assets/nav-ea9b29e28774a3f332e6b97157e35631293ca6639f26a5494f31751416e519ef.svg" width="1000" height="1000" class="lazyload" alt="Turbologo logo" />
+                      </a>
+
+                      <div class="tl_header_wrapper">
+                          <div class="tl_header_header">
+                              <img src="https://assets.turbologo.com/assets/landing/icons/pi-logo-66cda23dce76f1adf42edacfd73d7a171f2903ceb9bb6a2a4b5b31222d96f700.svg" width="1000" height="1000" class="tl_header_header__logo" alt="Turbologo logo" />
+                              <a href="#">
+                                  <img data-src="https://assets.turbologo.com/assets/close-3a301ea99c60076f3ca9cfdb4c2a1906577b5fa1a4d4a33123895e5d15db17a9.svg" width="1000" height="1000" class="lazyload tl_header_header__close" alt="Turbologo logo" />
+                              </a>
+                          </div>
+
+                          <ul class="tl_header_nav">
+                              <li class="tl_header_nav__item tl_header_nav__item--home"><a href="https://turbologo.com/es">Hogar</a></li>
+
+                              <li class="tl_header_nav__item tl_header_nav__item--create_logo"><a href="https://turbologo.com/es/crear-logo">Diseñar un logotipo</a></li>
+
+                                <li class="tl_header_nav__item tl_header_nav__item--gallery"><a href="https://turbologo.com/es/ideas-de-logotipos">Ideas de logotipos</a></li>
+                                <li class="tl_header_nav__item tl_header_nav__item--templates"><a href="https://turbologo.com/es/crear-logo/templates">Plantillas</a></li>
+                                  <li class="tl_header_nav__item tl_header_nav__item--blog"><a href="https://turbologo.com/es/blog/">Blog</a></li>
+                              <li class="tl_header_nav__item tl_header_nav__item--separator_first"></li>
+                              <li class="tl_header_nav__item tl_header_nav__item--faq"><a href="https://turbologo.com/es/faq">Preguntas Frecuentes</a></li>
+                              <li class="tl_header_nav__item tl_header_nav__item--support"><a href="https://turbologo.com/es/contacts">Contacta con nosotros</a></li>
+
+                                <li class="tl_header_nav__item tl_header_nav__item--make_logo"><a href="https://turbologo.com/es/crear-logo">Diseñar un logotipo</a></li>
+
+                                <li class="tl_header_nav__item tl_header_nav__item--sign_in">
+                                    <a href="#login" rel="modal">Iniciar sesión</a>
+                                </li>
+
+                              <li class="tl_header_nav__item tl_header_nav__item--separator_second"></li>
+
+                                  <li class="tl_header_nav__item tl_header_nav__item--lng">
+        <a href="#" id="lng">Español</a>
+        <ul class="tl_header_lng">
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="en" href="https://turbologo.com/logo-maker/templates/1274440-football-club-logo">
+                  English
+                </a>
+              </li>
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="ru" href="https://turbologo.ru/create-logo/templates/1274440-logotip-futbolnogo-kluba">
+                  Русский
+                </a>
+              </li>
+              <li class="tl_header_lng__item tl_header_lng__item--selected">
+                <a class="item" rel="alternate" hreflang="" href="#">
+                  Español
+                </a>
+              </li>
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="pt" href="https://turbologo.com/pt/criar-logo/templates/1274440-logotipo-do-clube-de-futebol">
+                  Português
+                </a>
+              </li>
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="fr" href="https://turbologo.com/fr/creer-un-logo/templates/1274440-logo-du-club-de-football">
+                  Français
+                </a>
+              </li>
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="it" href="https://turbologo.com/it/crea-logo/templates/1274440-logo-del-club-di-calcio">
+                  Italiano
+                </a>
+              </li>
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="de" href="https://turbologo.com/de/logo-erstellen/templates/1274440-fussballverein-logo">
+                  Deutsch
+                </a>
+              </li>
+              <li class="tl_header_lng__item ">
+                <a class="item" rel="alternate" hreflang="tr" href="https://turbologo.com/tr/logo-tasarim/templates/1274440-futbol-kulubu-logosu">
+                  Türk
+                </a>
+              </li>
+        </ul>
+    </li>
+
+                          </ul>
+                      </div>
+
+                      <div class="tl_header__overlay"></div>
+                          <a href="https://turbologo.com/es/crear-logo" class="tl_header__create_logo">Diseñar un logotipo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <div id="main" class="main service">
+        
+<div id="logo-template">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="logo-template__breadcrumbs">
+          <a href="https://turbologo.com/es">Crear logo</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://turbologo.com/es/crear-logo">Aplicación de diseño de logotipos</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://turbologo.com/es/crear-logo/templates">Plantillas de logotipos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row logo-template__card">
+      <div class="col-md-6 logo-template_image_container">
+        <a href="#" data-template-id="1274440" class="use-template-link">
+          <img class="logo-templates__image img-responsive" src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274440/draw_svg20210507-22909-1wt4rbj.svg.png" title="Logo Del Club De Futbol" alt="Logo Del Club De Futbol" width="500" height="500" />
+        </a>
+      </div>
+      <div class="col-md-6 logo-template__card_title">
+        <h1>Logo Del Club De Futbol</h1>
+      </div>
+      <div class="col-md-6 logo-templates__tags-list">
+            <a href="/es/ideas-de-logotipos/club" class="logo-template__tag_item">
+              Club
+            </a>
+            <a href="/es/ideas-de-logotipos/deporte" class="logo-template__tag_item">
+              Deporte
+            </a>
+            <a href="/es/ideas-de-logotipos/10-club-de-futbol" class="logo-template__tag_item">
+              Club de fútbol
+            </a>
+
+            <a href="/es/crear-logo/templates/2170-arsenal" class="logo-template__tag_item">
+              Arsenal
+            </a>
+            <a href="/es/crear-logo/templates/azul" class="logo-template__tag_item">
+              Azul
+            </a>
+            <a href="/es/crear-logo/templates/degradado" class="logo-template__tag_item">
+              Degradado
+            </a>
+            <a href="/es/crear-logo/templates/pelota" class="logo-template__tag_item">
+              Pelota
+            </a>
+            <a href="/es/crear-logo/templates/proteger" class="logo-template__tag_item">
+              Proteger
+            </a>
+            <a href="/es/crear-logo/templates/futbol" class="logo-template__tag_item">
+              Fútbol
+            </a>
+            <a href="/es/crear-logo/templates/futbolista" class="logo-template__tag_item">
+              Futbolista
+            </a>
+            <a href="/es/crear-logo/templates/partido-de-futbol" class="logo-template__tag_item">
+              Partido de fútbol
+            </a>
+            <a href="/es/crear-logo/templates/equipo-de-futbol" class="logo-template__tag_item">
+              Equipo de fútbol
+            </a>
+      </div>
+      <div class="col-md-6 logo-templates__buttons">
+        <a data-template-id="1274440" href="#" class="logo-templates__create-button btn btn-action btn-edge use-template-link">
+          Crear logo por plantilla
+        </a>
+
+      </div>
+      <div class="col-md-6 logo-template__card_description">
+        <p>Logo Del Club De Futbol es excelente si trabaja en Club, Deporte, Club de fútbol industrias. Utilice esta plantilla para crear un logotipo para su empresa o equipo</p>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="margin-top: 40px; margin-bottom: 5px;">Related templates</h2>
+        </div>
+        <div class="logo-templates__related-logos">
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/3154711-escudo-y-logotipo-de-futbol-leon">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/3154711/preview_image20210218-22633-1ppvnoo.png" alt="Escudo Y Logotipo De Fútbol León" title="Escudo Y Logotipo De Fútbol León" width="500" height="500" />
+          <span class="thumb__title">Escudo Y Logotipo De Fútbol León</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/472639-escudo-amarillo-y-logo-de-culturista">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/472639/preview_image20220425-1141-5yawde.png" alt="Escudo Amarillo Y Logo De Culturista" title="Escudo Amarillo Y Logo De Culturista" width="500" height="500" />
+          <span class="thumb__title">Escudo Amarillo Y Logo De Culturista</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/2029671-logotipo-de-palos-de-lacrosse">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/2029671/preview_image20201127-2862-rmcp5w.png" alt="Logotipo De Palos De Lacrosse" title="Logotipo De Palos De Lacrosse" width="500" height="500" />
+          <span class="thumb__title">Logotipo De Palos De Lacrosse</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/4479760-logo-de-piscina">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/4479760/preview_image20220112-28400-w1aw2b.png" alt="Logo De Piscina" title="Logo De Piscina" width="500" height="500" />
+          <span class="thumb__title">Logo De Piscina</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/4503196-logotipo-de-arte-de-linea-de-nadador">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/4503196/preview_image20210511-18666-y8am9x.png" alt="Logotipo De Arte De Línea De Nadador" title="Logotipo De Arte De Línea De Nadador" width="500" height="500" />
+          <span class="thumb__title">Logotipo De Arte De Línea De Nadador</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/609296-mancuerna-y-monograma-c-logotipo-de-c">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/609296/preview_image20201020-26330-javjqp.png" alt="Mancuerna Y Monograma C | Logotipo De C" title="Mancuerna Y Monograma C | Logotipo De C" width="500" height="500" />
+          <span class="thumb__title">Mancuerna Y Monograma C | Logotipo De C</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/5100725-pelota-de-futbol-y-logo-de-fuego">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/5100725/preview_image20210617-26747-13ojhhb.png" alt="Pelota De Futbol Y Logo De Fuego" title="Pelota De Futbol Y Logo De Fuego" width="500" height="500" />
+          <span class="thumb__title">Pelota De Futbol Y Logo De Fuego</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/609272-logo-de-peso-azul">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/609272/preview_image20210714-19711-1ca3sbh.png" alt="Logo De Peso Azul" title="Logo De Peso Azul" width="500" height="500" />
+          <span class="thumb__title">Logo De Peso Azul</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/672836-escudo-y-logo-de-orejas-de-trigo">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/672836/preview_image20200907-4882-h9buwr.png" alt="Escudo Y Logo De Orejas De Trigo" title="Escudo Y Logo De Orejas De Trigo" width="500" height="500" />
+          <span class="thumb__title">Escudo Y Logo De Orejas De Trigo</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/2029486-bate-de-softbol-y-logo-de-atleta">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/2029486/preview_image20201127-2862-fx1kdi.png" alt="Bate De Softbol Y Logo De Atleta" title="Bate De Softbol Y Logo De Atleta" width="500" height="500" />
+          <span class="thumb__title">Bate De Softbol Y Logo De Atleta</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/264998-logo-del-juego-de-futbol">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/264998/preview_image20210830-7994-1auutnd.png" alt="Logo Del Juego De Futbol" title="Logo Del Juego De Futbol" width="500" height="500" />
+          <span class="thumb__title">Logo Del Juego De Futbol</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/2895019-logo-del-club-nocturno-de-luna">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/2895019/preview_image20210201-3078-g69nhn.png" alt="Logo Del Club Nocturno De Luna" title="Logo Del Club Nocturno De Luna" width="500" height="500" />
+          <span class="thumb__title">Logo Del Club Nocturno De Luna</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/564222-pelota-de-rugby-y-logo-de-trigo">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/564222/preview_image20200907-6176-fxvve6.png" alt="Pelota De Rugby Y Logo De Trigo" title="Pelota De Rugby Y Logo De Trigo" width="500" height="500" />
+          <span class="thumb__title">Pelota De Rugby Y Logo De Trigo</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/984071-logo-de-flor-azul">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/984071/preview_image20220112-28400-qqhv3y.png" alt="Logo De Flor Azul" title="Logo De Flor Azul" width="500" height="500" />
+          <span class="thumb__title">Logo De Flor Azul</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/1975849-logo-de-patada-de-karate">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/1975849/preview_image20201125-14060-4004cv.png" alt="Logo De Patada De Karate" title="Logo De Patada De Karate" width="500" height="500" />
+          <span class="thumb__title">Logo De Patada De Karate</span>
+        </a>
+      </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a href="/es/crear-logo/templates/5248785-logotipo-de-apuesta-letra-b">
+          <img class="img-responsive lazyload" data-src="https://uploads.turbologo.com/uploads/design/preview_image/5248785/preview_image20210802-26855-1an12rj.png" alt="Logotipo De Apuesta Letra B" title="Logotipo De Apuesta Letra B" width="500" height="500" />
+          <span class="thumb__title">Logotipo De Apuesta Letra B</span>
+        </a>
+      </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+  <div class="features-boxed" style="background-color:#ffffff">
+    <div class="container tl_home_container">
+      <div class="row">
+        <div class="col-sm-12" style="margin-top:30px">
+          <h2>Los mejores diseños de logotipos para cualquier sector</h2>
+          <div class="category-list">
+            <ul>
+                <li><a href="/es/ideas-de-logotipos/abastecimiento">Abastecimiento</a></li>
+                <li><a href="/es/ideas-de-logotipos/abstraccion">Abstracción</a></li>
+                <li><a href="/es/ideas-de-logotipos/21-accesorios">Accesorios</a></li>
+                <li><a href="/es/ideas-de-logotipos/al-por-menor">Al por menor</a></li>
+                <li><a href="/es/ideas-de-logotipos/animales">Animales</a></li>
+                <li><a href="/es/ideas-de-logotipos/aplicacion">Aplicación</a></li>
+                <li><a href="/es/ideas-de-logotipos/aprendizaje-educacion">Aprendizaje, educación</a></li>
+                <li><a href="/es/ideas-de-logotipos/aptitud">Aptitud</a></li>
+                <li><a href="/es/ideas-de-logotipos/17-arquitectura">Arquitectura</a></li>
+                <li><a href="/es/ideas-de-logotipos/86-arte">Arte</a></li>
+                <li><a href="/es/ideas-de-logotipos/auditoria">Auditoría</a></li>
+                <li><a href="/es/ideas-de-logotipos/auto">Auto</a></li>
+                <li><a href="/es/ideas-de-logotipos/aviacion">Aviación</a></li>
+                <li><a href="/es/ideas-de-logotipos/149-baloncesto">Baloncesto</a></li>
+                <li><a href="/es/ideas-de-logotipos/banco">Banco</a></li>
+                <li><a href="/es/ideas-de-logotipos/banda">Banda</a></li>
+                <li><a href="/es/ideas-de-logotipos/bar">Bar</a></li>
+                <li><a href="/es/ideas-de-logotipos/barberia">Barbería</a></li>
+                <li><a href="/es/ideas-de-logotipos/134-bebe">Bebé</a></li>
+                <li><a href="/es/ideas-de-logotipos/blog">Blog</a></li>
+                <li><a href="/es/ideas-de-logotipos/boda">Boda</a></li>
+                <li><a href="/es/ideas-de-logotipos/153-boutique">Boutique</a></li>
+                <li><a href="/es/ideas-de-logotipos/beisbol">Béisbol</a></li>
+                <li><a href="/es/ideas-de-logotipos/31-cafeteria">Cafetería</a></li>
+                <li><a href="/es/ideas-de-logotipos/32-cafeteria">Cafetería</a></li>
+                <li><a href="/es/ideas-de-logotipos/caridad">Caridad</a></li>
+                <li><a href="/es/ideas-de-logotipos/24-casa">Casa</a></li>
+                <li><a href="/es/ideas-de-logotipos/caza-y-pesca">Caza y pesca</a></li>
+                <li><a href="/es/ideas-de-logotipos/147-cerveza">Cerveza</a></li>
+                <li><a href="/es/ideas-de-logotipos/33-cine">Cine</a></li>
+                <li><a href="/es/ideas-de-logotipos/claro">Claro</a></li>
+                <li><a href="/es/ideas-de-logotipos/club">Club</a></li>
+                <li><a href="/es/ideas-de-logotipos/10-club-de-futbol">Club de fútbol</a></li>
+                <li><a href="/es/ideas-de-logotipos/65-clinica-dental">Clínica dental</a></li>
+                <li><a href="/es/ideas-de-logotipos/colegio">Colegio</a></li>
+                <li><a href="/es/ideas-de-logotipos/3-comida">Comida</a></li>
+                <li><a href="/es/ideas-de-logotipos/266-comunicacion">Comunicación</a></li>
+                <li><a href="/es/ideas-de-logotipos/consultante">Consultante</a></li>
+                <li><a href="/es/ideas-de-logotipos/contabilidad">Contabilidad</a></li>
+                <li><a href="/es/ideas-de-logotipos/creatividad">Creatividad</a></li>
+                <li><a href="/es/ideas-de-logotipos/cuidado-del-cesped">Cuidado del césped</a></li>
+                <li><a href="/es/ideas-de-logotipos/deporte">Deporte</a></li>
+                <li><a href="/es/ideas-de-logotipos/digital">Digital</a></li>
+                <li><a href="/es/ideas-de-logotipos/164-diseno-de-interiores">Diseño de interiores</a></li>
+                <li><a href="/es/ideas-de-logotipos/diseno-grafico">Diseño gráfico</a></li>
+                <li><a href="/es/ideas-de-logotipos/67-edificio">Edificio</a></li>
+                <li><a href="/es/ideas-de-logotipos/empresas-agricolas">Empresas agrícolas</a></li>
+                <li><a href="/es/ideas-de-logotipos/energia-solar">Energía solar</a></li>
+                <li><a href="/es/ideas-de-logotipos/entrenamiento">Entrenamiento</a></li>
+                <li><a href="/es/ideas-de-logotipos/54-entretenimiento">Entretenimiento</a></li>
+                <li><a href="/es/ideas-de-logotipos/envio">Envío</a></li>
+                <li><a href="/es/ideas-de-logotipos/espacio-cuadrado">Espacio cuadrado</a></li>
+                <li><a href="/es/ideas-de-logotipos/esports">Esports</a></li>
+                <li><a href="/es/ideas-de-logotipos/estilo-de-vida-saludable">Estilo de vida saludable</a></li>
+                <li><a href="/es/ideas-de-logotipos/155-evento">Evento</a></li>
+                <li><a href="/es/ideas-de-logotipos/familia">Familia</a></li>
+                <li><a href="/es/ideas-de-logotipos/finanzas">Finanzas</a></li>
+                <li><a href="/es/ideas-de-logotipos/flores">Flores</a></li>
+                <li><a href="/es/ideas-de-logotipos/fotografia">Fotografía</a></li>
+                <li><a href="/es/ideas-de-logotipos/267-garaje">Garaje</a></li>
+                <li><a href="/es/ideas-de-logotipos/gas-de-petroleo">Gas de petróleo</a></li>
+                <li><a href="/es/ideas-de-logotipos/hecho-a-mano">Hecho a mano</a></li>
+                <li><a href="/es/ideas-de-logotipos/hogar">Hogar</a></li>
+                <li><a href="/es/ideas-de-logotipos/45-hotel">Hotel</a></li>
+                <li><a href="/es/ideas-de-logotipos/hvac">Hvac</a></li>
+                <li><a href="/es/ideas-de-logotipos/industrial">Industrial</a></li>
+                <li><a href="/es/ideas-de-logotipos/ingenieria">Ingenieria</a></li>
+                <li><a href="/es/ideas-de-logotipos/instagram">Instagram</a></li>
+                <li><a href="/es/ideas-de-logotipos/it-desarrollo-de-software">It, desarrollo de software</a></li>
+                <li><a href="/es/ideas-de-logotipos/80-joyeria">Joyería</a></li>
+                <li><a href="/es/ideas-de-logotipos/juegos-de-computadora">Juegos de computadora</a></li>
+                <li><a href="/es/ideas-de-logotipos/jurisprudencia">Jurisprudencia</a></li>
+                <li><a href="/es/ideas-de-logotipos/la-agencia-de-publicidad">La agencia de publicidad</a></li>
+                <li><a href="/es/ideas-de-logotipos/la-tienda-de-animales">La tienda de animales</a></li>
+                <li><a href="/es/ideas-de-logotipos/lanza-libre">Lanza libre</a></li>
+                <li><a href="/es/ideas-de-logotipos/lavado-de-autos">Lavado de autos</a></li>
+                <li><a href="/es/ideas-de-logotipos/145-limpieza">Limpieza</a></li>
+                <li><a href="/es/ideas-de-logotipos/logotipo-de-moda">Logotipo de moda</a></li>
+                <li><a href="/es/ideas-de-logotipos/logistica">Logística</a></li>
+                <li><a href="/es/ideas-de-logotipos/82-manicura">Manicura</a></li>
+                <li><a href="/es/ideas-de-logotipos/maquilladora">Maquilladora</a></li>
+                <li><a href="/es/ideas-de-logotipos/masaje">Masaje</a></li>
+                <li><a href="/es/ideas-de-logotipos/medicamento">Medicamento</a></li>
+                <li><a href="/es/ideas-de-logotipos/moda">Moda</a></li>
+                <li><a href="/es/ideas-de-logotipos/mueble">Mueble</a></li>
+                <li><a href="/es/ideas-de-logotipos/marketing">Márketing</a></li>
+                <li><a href="/es/ideas-de-logotipos/mascara">Máscara</a></li>
+                <li><a href="/es/ideas-de-logotipos/41-musica">Música</a></li>
+                <li><a href="/es/ideas-de-logotipos/51-naturaleza">Naturaleza</a></li>
+                <li><a href="/es/ideas-de-logotipos/negocio">Negocio</a></li>
+                <li><a href="/es/ideas-de-logotipos/ninos">Niños</a></li>
+                <li><a href="/es/ideas-de-logotipos/ordenadores">Ordenadores</a></li>
+                <li><a href="/es/ideas-de-logotipos/37-paisajismo">Paisajismo</a></li>
+                <li><a href="/es/ideas-de-logotipos/panaderia">Panadería</a></li>
+                <li><a href="/es/ideas-de-logotipos/132-peluqueria">Peluquería</a></li>
+                <li><a href="/es/ideas-de-logotipos/personal">Personal</a></li>
+                <li><a href="/es/ideas-de-logotipos/pestana">Pestaña</a></li>
+                <li><a href="/es/ideas-de-logotipos/plomeria">Plomería</a></li>
+                <li><a href="/es/ideas-de-logotipos/podcast">Podcast</a></li>
+                <li><a href="/es/ideas-de-logotipos/politica">Política</a></li>
+                <li><a href="/es/ideas-de-logotipos/productos-cosmeticos">Productos cosméticos</a></li>
+                <li><a href="/es/ideas-de-logotipos/profesor">Profesor</a></li>
+                <li><a href="/es/ideas-de-logotipos/propiedad">Propiedad</a></li>
+                <li><a href="/es/ideas-de-logotipos/puertas">Puertas</a></li>
+                <li><a href="/es/ideas-de-logotipos/puesta-en-marcha">Puesta en marcha</a></li>
+                <li><a href="/es/ideas-de-logotipos/refaccion">Refacción</a></li>
+                <li><a href="/es/ideas-de-logotipos/renovacion-del-hogar">Renovación del hogar</a></li>
+                <li><a href="/es/ideas-de-logotipos/restaurante">Restaurante</a></li>
+                <li><a href="/es/ideas-de-logotipos/6-ropa">Ropa</a></li>
+                <li><a href="/es/ideas-de-logotipos/94-salon-de-belleza">Salón de belleza</a></li>
+                <li><a href="/es/ideas-de-logotipos/seguridad">Seguridad</a></li>
+                <li><a href="/es/ideas-de-logotipos/66-seguro">Seguro</a></li>
+                <li><a href="/es/ideas-de-logotipos/servicio-de-entrega">Servicio de entrega</a></li>
+                <li><a href="/es/ideas-de-logotipos/shopify">Shopify</a></li>
+                <li><a href="/es/ideas-de-logotipos/sin-animo-de-lucro">Sin ánimo de lucro</a></li>
+                <li><a href="/es/ideas-de-logotipos/spa">Spa</a></li>
+                <li><a href="/es/ideas-de-logotipos/tatuaje">Tatuaje</a></li>
+                <li><a href="/es/ideas-de-logotipos/taxi">Taxi</a></li>
+                <li><a href="/es/ideas-de-logotipos/151-tecnologia">Tecnología</a></li>
+                <li><a href="/es/ideas-de-logotipos/tejido-de-punto">Tejido de punto</a></li>
+                <li><a href="/es/ideas-de-logotipos/templo">Templo</a></li>
+                <li><a href="/es/ideas-de-logotipos/textil">Textil</a></li>
+                <li><a href="/es/ideas-de-logotipos/tienda-online">Tienda online</a></li>
+                <li><a href="/es/ideas-de-logotipos/tintoreria-lavanderia">Tintorería, lavandería</a></li>
+                <li><a href="/es/ideas-de-logotipos/72-transporte">Transporte</a></li>
+                <li><a href="/es/ideas-de-logotipos/73-turismo">Turismo</a></li>
+                <li><a href="/es/ideas-de-logotipos/tv-television">Tv, television</a></li>
+                <li><a href="/es/ideas-de-logotipos/veterinario">Veterinario</a></li>
+                <li><a href="/es/ideas-de-logotipos/wix">Wix</a></li>
+                <li><a href="/es/ideas-de-logotipos/yoga">Yoga</a></li>
+                <li><a href="/es/ideas-de-logotipos/youtube">Youtube</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="tl_banner">
+    <div class="container tl_banner_in">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="tl_banner__title">Cree un logo con el creador de logos en línea de Turbologo</h2>
+                <img title="Cree un logo con el creador de logos en línea de Turbologo" alt="Cree un logo con el creador de logos en línea de Turbologo" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/logo_maker/banner-mobile-be66f8f1330cfd6177e664c9fc96372df6b4f68790ffa9b23fee5e57c5208599.png" class="lazyload tl_banner__img tl_banner__img--mobile" />
+                <p class="tl_banner__description">Muchos modelos y una interfaz fácil de usar. Cree una imagen de marca sobresaliente aquí y ahora.</p>
+                <a href="https://turbologo.com/es/crear-logo" class="tl_banner__make">Haga un logo</a>
+                    <div style="margin-top: 20px">
+                        <a href="https://www.trustpilot.com/review/turbologo.com" target="_blank" >
+  <svg width="170" height="20" viewBox="0 0 170 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M71.3 0V20H91.3V0C91.3 0 71.3 0 71.3 0ZM81.4 3.4L83.1 8.5H88.5L81.5 13.6L84.6 13L85.8 16.8L81.5 13.7L77.2 16.8L78.9 11.7L74.6 8.6H80L81.4 3.4ZM95.1 0V20H115.1V0C115.1 0 95.1 0 95.1 0ZM105.1 3.4L106.8 8.5H112.2L105.2 13.6L108.3 13L109.5 16.8L105.2 13.7L100.9 16.8L102.6 11.7L98.3 8.6H103.7L105.1 3.4ZM47.5 0V20H67.5V0C67.5 0 47.5 0 47.5 0ZM57.6 3.4L59.3 8.5H64.7L57.7 13.6L60.8 13L62 16.8L57.7 13.7L53.4 16.8L55.1 11.7L50.8 8.6H56.2L57.6 3.4ZM23.8 0V20H43.8V0C43.8 0 23.8 0 23.8 0ZM33.8 3.4L35.5 8.5H40.9L33.9 13.6L37 13L38.2 16.8L33.9 13.7L29.6 16.8L31.3 11.7L27 8.6H32.4L33.8 3.4ZM0 0V20H20V0C20 0 0 0 0 0ZM10.1 3.4L11.8 8.5H17.2L10.2 13.6L13.3 13L14.5 16.8L10.2 13.7L5.89999 16.8L7.6 11.7L3.3 8.6H8.7L10.1 3.4Z" fill="#00B67A"/>
+  <path d="M132.166 11.6572H133.547V12.6895H132.166V15H130.895V12.6895H126.362V11.9443L130.819 5.04688H132.166V11.6572ZM127.798 11.6572H130.895V6.77637L130.744 7.0498L127.798 11.6572Z" fill="#303030"/>
+  <path d="M134.846 14.3369C134.846 14.1182 134.91 13.9359 135.037 13.79C135.169 13.6442 135.365 13.5713 135.625 13.5713C135.885 13.5713 136.081 13.6442 136.213 13.79C136.35 13.9359 136.418 14.1182 136.418 14.3369C136.418 14.5465 136.35 14.722 136.213 14.8633C136.081 15.0046 135.885 15.0752 135.625 15.0752C135.365 15.0752 135.169 15.0046 135.037 14.8633C134.91 14.722 134.846 14.5465 134.846 14.3369Z" fill="#303030"/>
+  <path d="M144.416 7.64453C144.416 8.14128 144.284 8.58333 144.02 8.9707C143.76 9.35807 143.407 9.66113 142.96 9.87988C143.479 10.1032 143.89 10.429 144.19 10.8574C144.496 11.2858 144.648 11.7712 144.648 12.3135C144.648 13.1748 144.357 13.8607 143.773 14.3711C143.195 14.8815 142.431 15.1367 141.483 15.1367C140.526 15.1367 139.758 14.8815 139.18 14.3711C138.605 13.8561 138.318 13.1702 138.318 12.3135C138.318 11.7757 138.464 11.2904 138.756 10.8574C139.052 10.4245 139.46 10.0964 139.979 9.87305C139.537 9.6543 139.189 9.35124 138.934 8.96387C138.678 8.5765 138.551 8.13672 138.551 7.64453C138.551 6.80599 138.82 6.14062 139.357 5.64844C139.895 5.15625 140.604 4.91016 141.483 4.91016C142.358 4.91016 143.065 5.15625 143.603 5.64844C144.145 6.14062 144.416 6.80599 144.416 7.64453ZM143.384 12.2861C143.384 11.7301 143.206 11.2767 142.851 10.9258C142.5 10.5749 142.039 10.3994 141.47 10.3994C140.9 10.3994 140.442 10.5726 140.096 10.9189C139.754 11.2653 139.583 11.721 139.583 12.2861C139.583 12.8512 139.749 13.2956 140.082 13.6191C140.419 13.9427 140.886 14.1045 141.483 14.1045C142.076 14.1045 142.541 13.9427 142.878 13.6191C143.215 13.291 143.384 12.8467 143.384 12.2861ZM141.483 5.94922C140.987 5.94922 140.583 6.10417 140.273 6.41406C139.968 6.7194 139.815 7.13639 139.815 7.66504C139.815 8.1709 139.966 8.58105 140.267 8.89551C140.572 9.2054 140.978 9.36035 141.483 9.36035C141.989 9.36035 142.393 9.2054 142.693 8.89551C142.999 8.58105 143.151 8.1709 143.151 7.66504C143.151 7.15918 142.994 6.74674 142.68 6.42773C142.365 6.10872 141.966 5.94922 141.483 5.94922Z" fill="#303030"/>
+  <path d="M146.624 15.8545H145.537L149.693 5.04688H150.773L146.624 15.8545Z" fill="#303030"/>
+  <path d="M152.592 10.0098L153.098 5.04688H158.197V6.21582H154.171L153.87 8.92969C154.358 8.64258 154.911 8.49902 155.531 8.49902C156.438 8.49902 157.158 8.7998 157.691 9.40137C158.225 9.99837 158.491 10.8073 158.491 11.8281C158.491 12.8535 158.213 13.6624 157.657 14.2549C157.106 14.8428 156.333 15.1367 155.34 15.1367C154.46 15.1367 153.743 14.8929 153.187 14.4053C152.631 13.9176 152.314 13.2432 152.236 12.3818H153.433C153.51 12.9515 153.713 13.3822 154.041 13.6738C154.369 13.9609 154.802 14.1045 155.34 14.1045C155.928 14.1045 156.388 13.904 156.721 13.5029C157.058 13.1019 157.227 12.5482 157.227 11.8418C157.227 11.1764 157.044 10.6432 156.68 10.2422C156.32 9.83659 155.839 9.63379 155.237 9.63379C154.686 9.63379 154.253 9.75456 153.938 9.99609L153.604 10.2695L152.592 10.0098Z" fill="#303030"/>
+  <path d="M160.029 14.3369C160.029 14.1182 160.093 13.9359 160.221 13.79C160.353 13.6442 160.549 13.5713 160.809 13.5713C161.068 13.5713 161.264 13.6442 161.396 13.79C161.533 13.9359 161.602 14.1182 161.602 14.3369C161.602 14.5465 161.533 14.722 161.396 14.8633C161.264 15.0046 161.068 15.0752 160.809 15.0752C160.549 15.0752 160.353 15.0046 160.221 14.8633C160.093 14.722 160.029 14.5465 160.029 14.3369Z" fill="#303030"/>
+  <path d="M169.805 10.7549C169.805 12.236 169.552 13.3366 169.046 14.0566C168.54 14.7767 167.749 15.1367 166.674 15.1367C165.612 15.1367 164.826 14.7858 164.315 14.084C163.805 13.3776 163.541 12.3249 163.522 10.9258V9.2373C163.522 7.77441 163.775 6.6875 164.281 5.97656C164.787 5.26562 165.58 4.91016 166.66 4.91016C167.731 4.91016 168.52 5.25423 169.025 5.94238C169.531 6.62598 169.791 7.68327 169.805 9.11426V10.7549ZM168.54 9.02539C168.54 7.95443 168.39 7.17513 168.089 6.6875C167.788 6.19531 167.312 5.94922 166.66 5.94922C166.013 5.94922 165.541 6.19303 165.245 6.68066C164.949 7.16829 164.796 7.91797 164.787 8.92969V10.9531C164.787 12.0286 164.942 12.8239 165.252 13.3389C165.566 13.8493 166.04 14.1045 166.674 14.1045C167.298 14.1045 167.761 13.863 168.062 13.3799C168.367 12.8968 168.526 12.1357 168.54 11.0967V9.02539Z" fill="#303030"/>
+  </svg>
+</a>
+                    </div>
+                <img title="Cree un logo con el creador de logos en línea de Turbologo" alt="Cree un logo con el creador de logos en línea de Turbologo" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/logo_maker/banner-desktop-85a10ecd370f9aaff69de208eca2ac339ab63df291bb487fb8bf029fc13c00a2.png" class="lazyload tl_banner__img tl_banner__img--desktop" />
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="container tl_footer">
+    <div class="row">
+        <div class="col-md-12">
+            <img width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/pi-logo-66cda23dce76f1adf42edacfd73d7a171f2903ceb9bb6a2a4b5b31222d96f700.svg" title="Creador de logotipos en línea" alt="Creador de logotipos en línea" class="lazyload tl_footer__logo tl_footer__logo--mobile" />
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <img width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/pi-logo-66cda23dce76f1adf42edacfd73d7a171f2903ceb9bb6a2a4b5b31222d96f700.svg" title="Creador de logotipos en línea" alt="Creador de logotipos en línea" class="lazyload tl_footer__logo tl_footer__logo--desktop" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="tl_footer__copyright">
+                        Turbologo - crea logo en línea gratis.<br>
+                        © 2022 Turbologo
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul itemscope itemtype="https://schema.org/Organization" class="tl_footer_social">
+                        <li>
+                            <a itemprop="sameAs" href="https://www.youtube.com/channel/UCMr_QgZ-961BAU48ZaoamDg">
+                                <img title="Youtube" alt="Youtube" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/youtube-538d577ee7f1a1e6d9d124f9657d4adc6a00bd2758080af384c56a38540320e1.svg" class="lazyload" />
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="sameAs" href="https://www.instagram.com/turbologo_com/" target="_blank">
+                                <img title="Instagram" alt="Instagram" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/instagram-524bc4aeabce4ad92fd9fcd20c4fab96369675e3069b50ba6b73ce9e65c4f9d1.svg" class="lazyload" />
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="sameAs" href="https://www.facebook.com/turbologocom/" target="_blank">
+                                <img title="Facebook" alt="Facebook" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/facebook-0bd65a33b8aa5767d1246bcab2f1dc8f62dff2c74574fd72feb84df47bcda2f7.svg" class="lazyload" />
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="sameAs" href="https://www.pinterest.com/turbologo/" target="_blank">
+                                <img title="Pinterest" alt="Pinterest" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/pinterest-2e8b9103c6e1e9442792bccbc673e1e4575c3ef7450f67b3dd57fca9eb2606b3.svg" class="lazyload" />
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="sameAs" href="https://dribbble.com/turbologo" target="_blank">
+                                <img title="Dribbble" alt="Dribbble" width="1000" height="1000" data-src="https://assets.turbologo.com/assets/landing/icons/dribbble-12531908d595f8412b1223002bfb068cf20b7facb50d8c4305f8933983c48cfc.svg" class="lazyload" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <ul class="tl_footer_nav">
+                <li><a href="https://turbologo.com/es/how-it-works">Cómo funciona</a></li>
+                <li><a href="https://turbologo.com/es/reviews">Reseñas</a></li>
+                <li><a href="https://turbologo.com/es/services">Servicios</a></li>
+                <li><a href="https://turbologo.com/es/faq">Preguntas Frecuentes</a></li>
+                  <li><a href="https://turbologo.com/es/crear-logo">Diseñar un logotipo</a></li>
+                <li><a href="https://turbologo.com/es/pricing">Fijación de precios</a></li>
+                <li><a href="https://turbologo.com/es/affiliate">Programa de afiliados</a></li>
+
+                  <li><a href="https://turbologo.com/es/blog/">Blog</a></li>
+
+                <li><a href="https://turbologo.com/es/contacts">Contacta con nosotros</a></li>
+                  <li><a href="https://turbologo.com/es/privacy">Política de privacidad</a></li>
+                <li><a href="https://turbologo.com/es/terms">Términos de servicio</a></li>
+                <li><a href="https://turbologo.com/es/logo-designs-sitemap">Mapa del sitio web de Logos</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+
+
+    <!-- overlay for wizard -->
+    <div class="master-loading-outer">
+      <div class="master-loading-middle">
+        <div class="master-loading pop" id="close-modal">
+          <span class="message"></span>
+        </div>
+      </div>
+      <div class="master-loading-overlay"></div>
+    </div>
+
+    <div id="logos-not-visible-container" style="position: absolute; top: -1500px; left: -1500px"></div>
+
+
+    <script type="text/javascript">
+
+
+    </script>
+
+      <script src="https://assets.turbologo.com/assets/application-da328be041ef60c6b7a2ae8dac96833918240b6064914e2a526fc16d47d7c0a2.js"></script>
+
+    
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        
+      });
+    </script>
+
+  </body>
+</html>
