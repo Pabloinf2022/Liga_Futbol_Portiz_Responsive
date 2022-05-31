@@ -26,6 +26,26 @@
         border: 1px solid rgba(192, 40, 40, 0.8); }
 
 
+
+
+    /* header */
+.ht1 {
+    background-image: url("images/HT1.jpg"); }
+  
+  .ht2 {
+    background-image: url("images/HT2.jpg"); }
+  
+  .ht3 {
+    background-image: url("images/HT3.jpg"); }
+
+.slide {
+
+    margin-top: 30px;
+}
+
+.slide img {
+    height: 80vh;
+}
         /* -------------------Body-------------------- */
 
         .parent2 {
